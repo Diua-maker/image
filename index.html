@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Coragem Diua | Desenhos Realistas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3a63;
+            --secondary: #e9b949;
+            --dark: #2d3748;
+            --light: #f7fafc;
+            --gray: #718096;
+            --light-gray: #edf2f7;
+            --success: #48bb78;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        button, .btn {
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            display: inline-block;
+            text-align: center;
+        }
+
+        button:hover, .btn:hover {
+            background-color: #0f2a4e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #d5a93e;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1.5px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1DA851;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-1 { margin-bottom: 0.25rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-3 { margin-bottom: 1rem; }
+        .mb-4 { margin-bottom: 1.5rem; }
+        .mb-5 { margin-bottom: 3rem; }
+        .mb-6 { margin-bottom: 4rem; }
+        
+        .mt-1 { margin-top: 0.25rem; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-3 { margin-top: 1rem; }
+        .mt-4 { margin-top: 1.5rem; }
+        .mt-5 { margin-top: 3rem; }
+        .mt-6 { margin-top: 4rem; }
+
+        .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .py-3 { padding-top: 1rem; padding-bottom: 1rem; }
+        .py-4 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+        .py-5 { padding-top: 3rem; padding-bottom: 3rem; }
+        .py-6 { padding-top: 4rem; padding-bottom: 4rem; }
+
+        .px-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+        .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+        .px-3 { padding-left: 1rem; padding-right: 1rem; }
+        .px-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .px-5 { padding-left: 3rem; padding-right: 3rem; }
+
+        /* Header and Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .logo-subtitle {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        nav a.active {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--primary);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(to right, rgba(26, 58, 99, 0.9), rgba(26, 58, 99, 0.7)), url('https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Featured Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .featured-item {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+
+        .featured-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .featured-img {
+            height: 250px;
+            background-color: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .featured-item:hover .featured-img img {
+            transform: scale(1.05);
+        }
+
+        .featured-content {
+            padding: 1.5rem;
+        }
+
+        .featured-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--light-gray);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-item {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .testimonial-item::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            color: var(--light-gray);
+            z-index: 0;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-content p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            overflow: hidden;
+        }
+
+        .testimonial-author-info h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-author-info p {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .portfolio-item {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 3/4;
+            background-color: var(--light-gray);
+        }
+
+        .portfolio-img {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-image: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 1.5rem;
+            color: white;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .portfolio-overlay h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-overlay p {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-item {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .service-price {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-item p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        /* Process Section */
+        .process {
+            background-color: var(--light-gray);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-item {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-number {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            z-index: 2;
+        }
+
+        .process-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            background-color: var(--light-gray);
+            aspect-ratio: 3/4;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-text {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 0.375rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 58, 99, 0.1);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background-color: white;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .faq-question:hover {
+            background-color: var(--light-gray);
+        }
+
+        .faq-question.active:hover {
+            background-color: var(--primary);
+        }
+
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+
+        .faq-answer-inner {
+            padding: 1.5rem;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.125rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details p {
+            color: var(--gray);
+            font-size: 0.9375rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .footer-logo-subtitle {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-about p {
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-heading {
+            color: white;
+            margin-bottom: 1.25rem;
+            font-size: 1.25rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.875rem;
+            opacity: 0.7;
+        }
+
+        /* Success Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .success-icon {
+            font-size: 3rem;
+            color: var(--success);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Pages Container */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Queries */
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-img {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                padding: 1rem 0;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: all 0.3s ease;
+            }
+            
+            nav.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            nav li {
+                width: 100%;
+            }
+            
+            nav a {
+                display: block;
+                padding: 0.75rem 1.5rem;
+            }
+            
+            nav a:hover, nav a.active {
+                background-color: var(--light-gray);
+            }
+            
+            nav a.active::after {
+                display: none;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+            }
+            
+            .section-title h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .featured-grid, .testimonials-grid, .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <div class="logo-name">Diua Artes</div>
+                    <div class="logo-subtitle">Desenhos Realistas</div>
+                </div>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" data-page="home" class="nav-link active">Início</a></li>
+                        <li><a href="#" data-page="portfolio" class="nav-link">Portfólio</a></li>
+                        <li><a href="#" data-page="services" class="nav-link">Serviços</a></li>
+                        <li><a href="#" data-page="about" class="nav-link">Sobre</a></li>
+                        <li><a href="#" data-page="order" class="nav-link">Encomendar</a></li>
+                        <li><a href="#" data-page="contact" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pages Container -->
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Arte Realista que Captura a Essência</h1>
+                        <p>Transforme suas memórias em obras de arte duradouras com desenhos realistas feitos à mão. Retratos personalizados criados por Coragem Diua.</p>
+                        <div class="hero-buttons">
+                            <a href="#" data-page="order" class="btn">Fazer Pedido</a>
+                            <a href="https://wa.me/258872007783" class="btn btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Drawings Section -->
+            <section class="py-6">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Desenhos em Destaque</h2>
+                    </div>
+                    <div class="featured-grid">
+                        <div class="featured-item">
+                            <div class="featured-img">
+                                <img src="Coragem.jpg" alt="Retrato Realista">
+                            </div>
+                            <div class="featured-content">
+                                <h3>Autorretrato</h3>
+                                <p>Desenho a grafite sobre papel</p>
+                                <a href="#" data-page="order" class="btn btn-outline">Encomendar</a>
+                            </div>
+                        </div>
+                        <div class="featured-item">
+                            <div class="featured-img">
+                                <img src="InShot_20250705_144745262-1.jpg" alt="Retrato de uma donzela">
+                            </div>
+                            <div class="featured-content">
+                                <h3>Retrato uma donzela</h3>
+                                <p>Desenho a carvão sobre papel</p>
+                                <a href="#" data-page="order" class="btn btn-outline">Encomendar</a>
+                            </div>
+                        </div>
+                        <div class="featured-item">
+                            <div class="featured-img">
+                                <img src="1756626021013.jpg" alt="Retrato de Família">
+                            </div>
+                            <div class="featured-content">
+                                <h3>Retrato singular</h3>
+                                <p>Desenho a grafite e carvão</p>
+                                <a href="#" data-page="order" class="btn btn-outline">Encomendar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features py-6">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Por que escolher Diua Artes?</h2>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3>Artista Talentoso</h3>
+                            <p>Mesmo com experiência de menos de um ano, ele mostra uma grande capacidade em executar desenhos realistas, com atenção meticulosa a cada detalhe.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h3>Qualidade Garantida</h3>
+                            <p>Garantia de 99% de satisfação com revisões até você estar satisfeito.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <h3>Entrega Segura</h3>
+                            <p>Sua obra de arte é cuidadosamente embalada para garantir entrega perfeita.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="py-6">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Depoimentos de Clientes</h2>
+                    </div>
+                    <div class="testimonials-grid">
+                        <div class="testimonial-item">
+                            <div class="testimonial-content">
+                                <p>Sem depoimentos ainda.</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-author-img">
+                                        <img src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80" alt="Maria João">
+                                    </div>
+                                    <div class="testimonial-author-info">
+                                        <h4>N/D</h4>
+                                        <p>Milange, Zambézia</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Process Section -->
+            <section class="process py-6">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Processo de Trabalho</h2>
+                    </div>
+                    <div class="process-grid">
+                        <div class="process-item">
+                            <div class="process-number">1</div>
+                            <div class="process-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h3>Contacto via WhatsApp</h3>
+                            <p>Entre em contacto via WhatsApp e envie a foto de referência. Quanto melhor a foto, mais detalhado será o resultado.</p>
+                        </div>
+                        <div class="process-item">
+                            <div class="process-number">2</div>
+                            <div class="process-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <h3>Orçamento e Pagamento</h3>
+                            <p>Receba o orçamento e efectue o pagamento inicial de 50% para iniciar o trabalho.</p>
+                        </div>
+                        <div class="process-item">
+                            <div class="process-number">3</div>
+                            <div class="process-icon">
+                                <i class="fas fa-pencil-alt"></i>
+                            </div>
+                            <h3>Aprovação do Esboço</h3>
+                            <p>Envio um esboço preliminar para sua aprovação antes de iniciar os detalhes finais.</p>
+                        </div>
+                        <div class="process-item">
+                            <div class="process-number">4</div>
+                            <div class="process-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3>Desenvolvimento</h3>
+                            <p>Trabalho nos detalhes do desenho, capturando todas as nuances e características.</p>
+                        </div>
+                        <div class="process-item">
+                            <div class="process-number">5</div>
+                            <div class="process-icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <h3>Revisões</h3>
+                            <p>Envio actualizações durante o processo e realizo ajustes conforme seu feedback.</p>
+                        </div>
+                        <div class="process-item">
+                            <div class="process-number">6</div>
+                            <div class="process-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <h3>Entrega</h3>
+                            <p>Após pagamento final, a obra é cuidadosamente embalada e entregue.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Portfolio Page -->
+        <div id="portfolio" class="page">
+            <section class="py-5">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Meu Portfólio</h2>
+                    </div>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">
+                                <img src="Coragem.jpg" alt="Autorretrato">
+                            </div>
+                            <div class="portfolio-overlay">
+                                <h3>Autorretrato</h3>
+                                <p>Grafite sobre papel, 21x29,7cm</p>
+                                <a href="#" data-page="order" class="btn btn-secondary btn-sm">Encomendar</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">
+                                <img src="InShot_20251220_100052749.jpg" alt="Retrato Feminino">
+                            </div>
+                            <div class="portfolio-overlay">
+                                <h3>Retrato Feminino</h3>
+                                <p>Grafite sobre papel, 21x29,7cm</p>
+                                <a href="#" data-page="order" class="btn btn-secondary btn-sm">Encomendar</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">
+                                <img src="c.jpg" alt="Retrato Africa">
+                            </div>
+                            <div class="portfolio-overlay">
+                                <h3>Retrato Africa</h3>
+                                <p>Carvão sobre papel, 21x29,7cm</p>
+                                <a href="#" data-page="order" class="btn btn-secondary btn-sm">Encomendar</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">
+                                <img src="InShot_20250705_144745262-1.jpg" alt="Retrato de uma donzela">
+                            </div>
+                            <div class="portfolio-overlay">
+                                <h3>Retrato de Casal</h3>
+                                <p>Grafite e carvão, 29,7x42cm</p>
+                                <a href="#" data-page="order" class="btn btn-secondary btn-sm">Encomendar</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">
+                                <img src="IMG_20250913_114648.jpg" alt="Chaida">
+                            </div>
+                            <div class="portfolio-overlay">
+                                <h3>Chaida</h3>
+                                <p>Grafite sobre papel, 21x29,7cm</p>
+                                <a href="#" data-page="order" class="btn btn-secondary btn-sm">Encomendar</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">
+                                <img src="1756626021013.jpg" alt="Mother">
+                            </div>
+                            <div class="portfolio-overlay">
+                                <h3>Mother</h3>
+                                <p>Grafite sobre papel, 29,7x42cm</p>
+                                <a href="#" data-page="order" class="btn btn-secondary btn-sm">Encomendar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Services Page -->
+        <div id="services" class="page">
+            <section class="py-5">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Serviços e Preços</h2>
+                    </div>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <h3>Retrato em papel tamanho A4</h3>
+                            <div class="service-price">A partir de 250 MT</div>
+                            <p>Retratos individuais realistas em grafite ou carvão, capturando toda a essência e personalidade.</p>
+                            <a href="#" data-page="order" class="btn">Encomendar</a>
+                        </div>
+                        <div class="service-item">
+                            <h3>Retrato em papel tamanho A3</h3>
+                            <div class="service-price">A partir de 400 MT</div>
+                            <p>Eternize momentos especiais com um retrato realista de casal ou individual, perfeito para presentes.</p>
+                            <a href="#" data-page="order" class="btn">Encomendar</a>
+                        </div>
+                        <div class="service-item">
+                            <h3>Retrato em tamanho A2</h3>
+                            <div class="service-price">A partir de 750 MT</div>
+                            <p>Perfeito para retratos de família inteira com atenção meticulosa a cada membro.</p>
+                            <a href="#" data-page="order" class="btn">Encomendar</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="py-6">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Perguntas Frequentes</h2>
+                    </div>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Quanto tempo leva para receber meu desenho?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    O tempo médio para conclusão é de 1-3 semanas, dependendo da complexidade e do tamanho do papel. Para entregas urgentes, entre em contacto para verificar disponibilidade.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Que tipo de foto devo enviar?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    Envie fotos nítidas, bem iluminadas e de alta resolução. Evite fotos desfocadas, muito escuras ou com filtros pesados.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Como faço o pagamento?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    O pagamento pode ser feito via M-Pesa, e-Mola ou dinheiro fisico (Presencialmente). É necessário um adiantamento de 50% para iniciar o trabalho.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Fazem entregas fora de Milange?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    Não! De momento somente entregamos em Milange.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <section class="py-5">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Sobre Diua Artes</h2>
+                    </div>
+                    <div class="about-grid">
+                        <div class="about-img">
+                            <img src="InShot_20251027_195427413.jpg" alt="Coragem Diua">
+                        </div>
+                        <div class="about-content">
+                            <h3>Artista de Milange</h3>
+                            <p class="mb-4">Olá! Sou Coragem Diua, ou melhor, Diua Artes</p>
+                            <p class="mb-4">Artista de desenhos realistas natural de Milange, na província da Zambézia, Moçambique.</p>
+                            <p class="mb-4">A minha paixão pela arte começou desde o ensino secundario, e ao longo dos anos desenvolvi técnicas especializadas em retratos realistas a grafite e carvão.</p>
+                            <p class="mb-5">Cada obra que crio é única, feita com dedicação e atenção aos mínimos detalhes, para que você receba não apenas um desenho, mas uma verdadeira obra de arte que preserva memórias e emoções.</p>
+                            <a href="https://wa.me/258872007783" class="btn btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                            </a>
+                            <div class="about-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">1+</div>
+                                    <div class="stat-text">Anos de Experiência</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">10+</div>
+                                    <div class="stat-text">Desenhos Entregues</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">10+</div>
+                                    <div class="stat-text">Clientes Satisfeitos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Order Page -->
+        <div id="order" class="page">
+            <section class="py-5">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Encomendar Desenho</h2>
+                    </div>
+                    <form id="orderForm" class="mb-5">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Nome Completo*</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsapp">Número de WhatsApp*</label>
+                                <input type="tel" id="whatsapp" name="whatsapp" required>
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="drawingType">Tamanhos principais*</label>
+                                <select id="drawingType" name="drawingType" required>
+                                    <option value="">Seleccione uma opção</option>
+                                    <option value="individual">Papel A4 (250 MT)</option>
+                                    <option value="couple">Papel A3 (400 MT)</option>
+                                    <option value="family">Papel A2 (750 MT)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="size">Outros Tamanhos*</label>
+                                <select id="size" name="size" required>
+                                    <option value="">Seleccione uma opção</option>
+                                    <option value="small">Pequeno (20x20cm)</option>
+                                    <option value="medium">Médio (30x30cm)</option>
+                                    <option value="large">Grande (40x40cm)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descrição do Desenho*</label>
+                            <textarea id="description" name="description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Localização para Entrega</label>
+                            <input type="text" id="location" name="location">
+                        </div>
+                        <div class="form-group">
+                            <label for="photoReference">Foto de Referência</label>
+                            <p class="mb-2" style="font-size: 0.875rem; color: var(--gray);">A foto será enviada via WhatsApp após o envio do pedido.</p>
+                        </div>
+                        <button type="submit" class="btn btn-whatsapp" style="width: 100%; max-width: 400px; margin: 0 auto; display: block;">
+                            <i class="fab fa-whatsapp"></i> Enviar Pedido via WhatsApp
+                        </button>
+                        <p class="text-center mt-3" style="font-size: 0.875rem; color: var(--gray);">Após enviar o pedido, será redireccionado para o WhatsApp para enviar a foto de referência.</p>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <section class="py-5">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Entre em Contacto</h2>
+                    </div>
+                    <div class="contact-grid">
+                        <div>
+                            <p class="mb-4">A forma mais rápida de me contactar é via WhatsApp:</p>
+                            <a href="https://wa.me/258872007783" class="btn btn-whatsapp mb-5">
+                                <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                            </a>
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>WhatsApp</h4>
+                                    <p>+258 87 200 7783</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Localização</h4>
+                                    <p>Milange, Província da Zambézia<br>Moçambique</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Horário de Atendimento</h4>
+                                    <p>Segunda a Sábado: 08h00 - 18h00<br>Domingo: 09h00 - 14h00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <form id="contactForm" class="mb-5">
+                                <div class="form-group">
+                                    <label for="contactName">Nome Completo*</label>
+                                    <input type="text" id="contactName" name="contactName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactWhatsapp">Número de WhatsApp*</label>
+                                    <input type="tel" id="contactWhatsapp" name="contactWhatsapp" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactMessage">Mensagem*</label>
+                                    <textarea id="contactMessage" name="contactMessage" required></textarea>
+                                </div>
+                                <button type="submit" class="btn">Enviar Mensagem</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="footer-logo-name">Coragem Diua</div>
+                        <div class="footer-logo-subtitle">Artista de desenhos realistas</div>
+                    </div>
+                    <p>Artista de desenhos realistas de Milange, Zambézia, Moçambique. Transformando memórias em obras de arte duradouras.</p>
+                    <a href="https://wa.me/258872007783" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="home" class="footer-nav-link">Início</a></li>
+                        <li><a href="#" data-page="portfolio" class="footer-nav-link">Portfólio</a></li>
+                        <li><a href="#" data-page="services" class="footer-nav-link">Serviços</a></li>
+                        <li><a href="#" data-page="about" class="footer-nav-link">Sobre</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Serviços</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="services" class="footer-nav-link">Retratos Individuais</a></li>
+                        <li><a href="#" data-page="services" class="footer-nav-link">Retratos de Família</a></li>
+                        <li><a href="#" data-page="services" class="footer-nav-link">Retratos Memoriais</a></li>
+                        <li><a href="#" data-page="services" class="footer-nav-link">Desenhos Coloridos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Coragem Diua - Artista de Milange, Moçambique. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Sucesso!</h3>
+            <p>Sua mensagem foi enviada com sucesso.</p>
+            <button class="btn" id="closeModal">OK</button>
+        </div>
+    </div>
+
+    <script>
+        // Navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        const footerNavLinks = document.querySelectorAll('.footer-nav-link');
+        const pages = document.querySelectorAll('.page');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        
+        // Show active page
+        function showPage(pageId) {
+            // Hide all pages
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update active nav link
+            navLinks.forEach(link => {
+                if (link.getAttribute('data-page') === pageId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            
+            // Close mobile menu if open
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Event listener for nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                showPage(pageId);
+            });
+        });
+        
+        // Event listener for footer nav links
+        footerNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                showPage(pageId);
+            });
+        });
+        
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+        
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
+                
+                // Close all other FAQs
+                faqQuestions.forEach(q => {
+                    if (q !== this) {
+                        q.classList.remove('active');
+                        q.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+                
+                // Toggle current FAQ
+                if (isActive) {
+                    this.classList.remove('active');
+                    answer.style.maxHeight = null;
+                } else {
+                    this.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        const successModal = document.getElementById('successModal');
+        const closeModal = document.getElementById('closeModal');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('contactName').value;
+            const whatsapp = document.getElementById('contactWhatsapp').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            // Simulate form submission
+            setTimeout(function() {
+                successModal.classList.add('active');
+                contactForm.reset();
+            }, 1000);
+        });
+        
+        closeModal.addEventListener('click', function() {
+            successModal.classList.remove('active');
+        });
+        
+        // Order Form Submission
+        const orderForm = document.getElementById('orderForm');
+        
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const drawingType = document.getElementById('drawingType').value;
+            const size = document.getElementById('size').value;
+            const description = document.getElementById('description').value;
+            const location = document.getElementById('location').value || 'Não especificado';
+            
+            // Create WhatsApp message
+            let whatsappMessage = 
+                `*Novo Pedido de Desenho*\n\n` +
+                `*Nome:* ${name}\n` +
+                `*WhatsApp:* ${whatsapp}\n` +
+                `*Tipo de Desenho:* ${document.getElementById('drawingType').options[document.getElementById('drawingType').selectedIndex].text}\n` +
+                `*Tamanho:* ${document.getElementById('size').options[document.getElementById('size').selectedIndex].text}\n` +
+                `*Descrição:* ${description}\n` +
+                `*Localização para Entrega:* ${location}`;
+            
+            // Encode message for WhatsApp URL
+            whatsappMessage = encodeURIComponent(whatsappMessage);
+            
+            // Redirect to WhatsApp
+            window.location.href = `https://wa.me/258872007783?text=${whatsappMessage}`;
+        });
+        
+        // Check for page links in URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const pageParam = urlParams.get('page');
+            
+            if (pageParam && document.getElementById(pageParam)) {
+                showPage(pageParam);
+            }
+            
+            // Initialize first FAQ as open
+            if (faqQuestions.length > 0) {
+                faqQuestions[0].click();
+            }
+        });
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.innerText);
+                let count = 0;
+                const duration = 2000; // Animation duration in milliseconds
+                const increment = target / (duration / 16); // Update every 16ms (60fps)
+                
+                const updateCounter = () => {
+                    if (count < target) {
+                        count += increment;
+                        counter.innerText = Math.ceil(count) + (counter.innerText.includes('%') ? '%' : '+');
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.innerText = target + (counter.innerText.includes('%') ? '%' : '+');
+                    }
+                };
+                
+                // Reset counter text for animation
+                counter.innerText = '0';
+                
+                // Observe when element comes into view
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        updateCounter();
+                        observer.disconnect();
+                    }
+                }, { threshold: 0.5 });
+                
+                observer.observe(counter);
+            });
+        }
+        
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            animateCounters();
+        });
+    </script>
+</body>
+</html>
+
