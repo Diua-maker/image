@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>Coragem Diua | Desenhos Realistas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +22,16 @@
             --gray: #718096;
             --light-gray: #edf2f7;
             --success: #48bb78;
+            --whatsapp: #25D366;
+        }
+
+        .dark {
+            --primary: #4a7ab8;
+            --secondary: #f5c85a;
+            --dark: #e2e8f0;
+            --light: #1a202c;
+            --gray: #a0aec0;
+            --light-gray: #2d3748;
         }
 
         * {
@@ -26,12 +41,19 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--dark);
             background-color: var(--light);
             line-height: 1.6;
-            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -52,6 +74,7 @@
             text-decoration: none;
             color: var(--primary);
             transition: all 0.3s ease;
+            -webkit-touch-callout: none;
         }
 
         button, .btn {
@@ -68,12 +91,19 @@
             font-size: 1rem;
             display: inline-block;
             text-align: center;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
         }
 
         button:hover, .btn:hover {
             background-color: #0f2a4e;
             transform: translateY(-2px);
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .dark button:hover, .dark .btn:hover {
+            background-color: #5a8ac8;
         }
 
         .btn-secondary {
@@ -97,9 +127,9 @@
         }
 
         .btn-whatsapp {
-            background-color: #25D366;
+            background-color: var(--whatsapp);
             color: white;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
@@ -107,6 +137,12 @@
 
         .btn-whatsapp:hover {
             background-color: #1DA851;
+        }
+
+        .btn-whatsapp-large {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            border-radius: 0.5rem;
         }
 
         .container {
@@ -126,7 +162,7 @@
         .mb-4 { margin-bottom: 1.5rem; }
         .mb-5 { margin-bottom: 3rem; }
         .mb-6 { margin-bottom: 4rem; }
-        
+
         .mt-1 { margin-top: 0.25rem; }
         .mt-2 { margin-top: 0.5rem; }
         .mt-3 { margin-top: 1rem; }
@@ -154,6 +190,10 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+        }
+
+        .dark header {
+            background-color: #2d3748;
         }
 
         .header-inner {
@@ -299,6 +339,10 @@
             background-color: white;
         }
 
+        .dark .featured-item {
+            background-color: #2d3748;
+        }
+
         .featured-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px rgba(0,0,0,0.1);
@@ -355,6 +399,10 @@
             transition: all 0.3s ease;
         }
 
+        .dark .feature-item {
+            background-color: #2d3748;
+        }
+
         .feature-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px rgba(0,0,0,0.1);
@@ -383,6 +431,10 @@
             padding: 2rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             position: relative;
+        }
+
+        .dark .testimonial-item {
+            background-color: #2d3748;
         }
 
         .testimonial-item::before {
@@ -510,6 +562,10 @@
             flex-direction: column;
         }
 
+        .dark .service-item {
+            background-color: #2d3748;
+        }
+
         .service-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px rgba(0,0,0,0.1);
@@ -549,6 +605,10 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             position: relative;
             z-index: 1;
+        }
+
+        .dark .process-item {
+            background-color: #2d3748;
         }
 
         .process-number {
@@ -621,44 +681,6 @@
             color: var(--gray);
         }
 
-        /* Form Styles */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #cbd5e0;
-            border-radius: 0.375rem;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(26, 58, 99, 0.1);
-        }
-
-        textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
         /* FAQ Section */
         .faq-container {
             max-width: 800px;
@@ -672,6 +694,10 @@
             overflow: hidden;
         }
 
+        .dark .faq-item {
+            border-color: #4a5568;
+        }
+
         .faq-question {
             padding: 1.5rem;
             background-color: white;
@@ -681,6 +707,12 @@
             justify-content: space-between;
             align-items: center;
             transition: all 0.3s ease;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .dark .faq-question {
+            background-color: #2d3748;
         }
 
         .faq-question.active {
@@ -702,6 +734,10 @@
             overflow: hidden;
             transition: all 0.3s ease;
             background-color: white;
+        }
+
+        .dark .faq-answer {
+            background-color: #2d3748;
         }
 
         .faq-answer-inner {
@@ -750,6 +786,58 @@
         .contact-details p {
             color: var(--gray);
             font-size: 0.9375rem;
+        }
+
+        /* WhatsApp CTA Section */
+        .whatsapp-cta {
+            background: linear-gradient(135deg, var(--whatsapp), #128C7E);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .whatsapp-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp-cta p {
+            font-size: 1.125rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .whatsapp-cta .btn {
+            background-color: white;
+            color: var(--whatsapp);
+            font-weight: 600;
+        }
+
+        .whatsapp-cta .btn:hover {
+            background-color: rgba(255,255,255,0.9);
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .whatsapp-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9375rem;
+        }
+
+        .whatsapp-feature i {
+            font-size: 1.25rem;
         }
 
         /* Footer */
@@ -821,47 +909,42 @@
             opacity: 0.7;
         }
 
-        /* Success Modal */
-        .modal {
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
+            color: white;
+            font-size: 1.75rem;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 999;
             transition: all 0.3s ease;
+            animation: pulse 2s infinite;
         }
 
-        .modal.active {
-            opacity: 1;
-            visibility: visible;
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            color: white;
         }
 
-        .modal-content {
-            background-color: white;
-            border-radius: 0.5rem;
-            padding: 2rem;
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-        }
-
-        .modal.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .success-icon {
-            font-size: 3rem;
-            color: var(--success);
-            margin-bottom: 1.5rem;
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
         }
 
         /* Pages Container */
@@ -890,7 +973,7 @@
             .about-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .about-img {
                 max-width: 400px;
                 margin: 0 auto;
@@ -901,7 +984,7 @@
             .menu-toggle {
                 display: flex;
             }
-            
+
             nav {
                 position: absolute;
                 top: 100%;
@@ -913,44 +996,54 @@
                 clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
                 transition: all 0.3s ease;
             }
-            
+
+            .dark nav {
+                background-color: #2d3748;
+            }
+
             nav.active {
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             }
-            
+
             nav ul {
                 flex-direction: column;
                 gap: 0;
             }
-            
+
             nav li {
                 width: 100%;
             }
-            
+
             nav a {
                 display: block;
                 padding: 0.75rem 1.5rem;
             }
-            
+
             nav a:hover, nav a.active {
                 background-color: var(--light-gray);
             }
-            
+
             nav a.active::after {
                 display: none;
             }
-            
+
             .hero-buttons {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
+
             .hero-buttons .btn {
                 width: 100%;
             }
-            
+
             .section-title h2 {
                 font-size: 1.75rem;
+            }
+
+            .whatsapp-features {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
             }
         }
 
@@ -958,9 +1051,14 @@
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .featured-grid, .testimonials-grid, .services-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
@@ -974,24 +1072,28 @@
                     <div class="logo-name">Diua Artes</div>
                     <div class="logo-subtitle">Desenhos Realistas</div>
                 </div>
-                <div class="menu-toggle">
+                <div class="menu-toggle" id="menuToggle">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-                <nav>
+                <nav id="mainNav">
                     <ul>
-                        <li><a href="#" data-page="home" class="nav-link active">Início</a></li>
-                        <li><a href="#" data-page="portfolio" class="nav-link">Portfólio</a></li>
-                        <li><a href="#" data-page="services" class="nav-link">Serviços</a></li>
-                        <li><a href="#" data-page="about" class="nav-link">Sobre</a></li>
-                        <li><a href="#" data-page="order" class="nav-link">Encomendar</a></li>
-                        <li><a href="#" data-page="contact" class="nav-link">Contacto</a></li>
+                        <li><a href="javascript:void(0);" data-page="home" class="nav-link active">Início</a></li>
+                        <li><a href="javascript:void(0);" data-page="portfolio" class="nav-link">Portfólio</a></li>
+                        <li><a href="javascript:void(0);" data-page="services" class="nav-link">Serviços</a></li>
+                        <li><a href="javascript:void(0);" data-page="about" class="nav-link">Sobre</a></li>
+                        <li><a href="javascript:void(0);" data-page="contact" class="nav-link">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="javascript:void(0);" class="whatsapp-float" id="whatsappFloat" title="Fale conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- Pages Container -->
     <main>
@@ -1004,9 +1106,8 @@
                         <h1>Arte Realista que Captura a Essência</h1>
                         <p>Transforme suas memórias em obras de arte duradouras com desenhos realistas feitos à mão. Retratos personalizados criados por Coragem Diua.</p>
                         <div class="hero-buttons">
-                            <a href="#" data-page="order" class="btn">Fazer Pedido</a>
-                            <a href="https://wa.me/258872007783" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            <a href="javascript:void(0);" class="btn btn-whatsapp btn-whatsapp-large" id="heroWhatsapp">
+                                <i class="fab fa-whatsapp"></i> Solicitar Desenho via WhatsApp
                             </a>
                         </div>
                     </div>
@@ -1022,33 +1123,64 @@
                     <div class="featured-grid">
                         <div class="featured-item">
                             <div class="featured-img">
-                                <img src="Coragem.jpg" alt="Retrato Realista">
+                                <img src="https://raw.githubusercontent.com/Diua-maker/image/main/Coragem.jpg" alt="Retrato Realista">
                             </div>
                             <div class="featured-content">
                                 <h3>Autorretrato</h3>
                                 <p>Desenho a grafite sobre papel</p>
-                                <a href="#" data-page="order" class="btn btn-outline">Encomendar</a>
+                                <a href="javascript:void(0);" class="btn btn-whatsapp whatsapp-order-btn">
+                                    <i class="fab fa-whatsapp"></i> Solicitar Similar
+                                </a>
                             </div>
                         </div>
                         <div class="featured-item">
                             <div class="featured-img">
-                                <img src="InShot_20250705_144745262-1.jpg" alt="Retrato de uma donzela">
+                                <img src="https://raw.githubusercontent.com/Diua-maker/image/main/InShot_20250705_144745262-1.jpg" alt="Retrato de uma donzela">
                             </div>
                             <div class="featured-content">
                                 <h3>Retrato uma donzela</h3>
                                 <p>Desenho a carvão sobre papel</p>
-                                <a href="#" data-page="order" class="btn btn-outline">Encomendar</a>
+                                <a href="javascript:void(0);" class="btn btn-whatsapp whatsapp-order-btn">
+                                    <i class="fab fa-whatsapp"></i> Solicitar Similar
+                                </a>
                             </div>
                         </div>
                         <div class="featured-item">
                             <div class="featured-img">
-                                <img src="1756626021013.jpg" alt="Retrato de Família">
+                                <img src="https://raw.githubusercontent.com/Diua-maker/image/main/1756626021013.jpg" alt="Retrato de Família">
                             </div>
                             <div class="featured-content">
                                 <h3>Retrato singular</h3>
                                 <p>Desenho a grafite e carvão</p>
-                                <a href="#" data-page="order" class="btn btn-outline">Encomendar</a>
+                                <a href="javascript:void(0);" class="btn btn-whatsapp whatsapp-order-btn">
+                                    <i class="fab fa-whatsapp"></i> Solicitar Similar
+                                </a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WhatsApp CTA Section -->
+            <section class="whatsapp-cta">
+                <div class="container">
+                    <h2>Pronto para Encomendar?</h2>
+                    <p>Entre em contacto pelo WhatsApp e envie sua foto de referência. Respondemos rapidamente e iniciamos seu desenho personalizado!</p>
+                    <a href="javascript:void(0);" class="btn btn-whatsapp-large" id="ctaWhatsapp">
+                        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                    </a>
+                    <div class="whatsapp-features">
+                        <div class="whatsapp-feature">
+                            <i class="fas fa-camera"></i>
+                            <span>Envie sua foto</span>
+                        </div>
+                        <div class="whatsapp-feature">
+                            <i class="fas fa-comments"></i>
+                            <span>Receba orçamento</span>
+                        </div>
+                        <div class="whatsapp-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Acompanhe o progresso</span>
                         </div>
                     </div>
                 </div>
@@ -1181,64 +1313,81 @@
                     <div class="portfolio-grid">
                         <div class="portfolio-item">
                             <div class="portfolio-img">
-                                <img src="Coragem.jpg" alt="Autorretrato">
+                                <img src="https://raw.githubusercontent.com/Diua-maker/image/main/Coragem.jpg" alt="Autorretrato">
                             </div>
                             <div class="portfolio-overlay">
                                 <h3>Autorretrato</h3>
                                 <p>Grafite sobre papel, 21x29,7cm</p>
-                                <a href="#" data-page="order" class="btn btn-secondary btn-sm">Encomendar</a>
+                                <a href="javascript:void(0);" class="btn btn-whatsapp btn-sm whatsapp-order-btn">
+                                    <i class="fab fa-whatsapp"></i> Solicitar
+                                </a>
                             </div>
                         </div>
                         <div class="portfolio-item">
                             <div class="portfolio-img">
-                                <img src="InShot_20251220_100052749.jpg" alt="Retrato Feminino">
+                                <img src="https://raw.githubusercontent.com/Diua-maker/image/main/InShot_20251220_100052749.jpg" alt="Retrato Feminino">
                             </div>
                             <div class="portfolio-overlay">
                                 <h3>Retrato Feminino</h3>
                                 <p>Grafite sobre papel, 21x29,7cm</p>
-                                <a href="#" data-page="order" class="btn btn-secondary btn-sm">Encomendar</a>
+                                <a href="javascript:void(0);" class="btn btn-whatsapp btn-sm whatsapp-order-btn">
+                                    <i class="fab fa-whatsapp"></i> Solicitar
+                                </a>
                             </div>
                         </div>
                         <div class="portfolio-item">
                             <div class="portfolio-img">
-                                <img src="c.jpg" alt="Retrato Africa">
+                                <img src="https://raw.githubusercontent.com/Diua-maker/image/main/c.jpg" alt="Retrato Africa">
                             </div>
                             <div class="portfolio-overlay">
                                 <h3>Retrato Africa</h3>
                                 <p>Carvão sobre papel, 21x29,7cm</p>
-                                <a href="#" data-page="order" class="btn btn-secondary btn-sm">Encomendar</a>
+                                <a href="javascript:void(0);" class="btn btn-whatsapp btn-sm whatsapp-order-btn">
+                                    <i class="fab fa-whatsapp"></i> Solicitar
+                                </a>
                             </div>
                         </div>
                         <div class="portfolio-item">
                             <div class="portfolio-img">
-                                <img src="InShot_20250705_144745262-1.jpg" alt="Retrato de uma donzela">
+                                <img src="https://raw.githubusercontent.com/Diua-maker/image/main/InShot_20250705_144745262-1.jpg" alt="Retrato de uma donzela">
                             </div>
                             <div class="portfolio-overlay">
                                 <h3>Retrato de Casal</h3>
                                 <p>Grafite e carvão, 29,7x42cm</p>
-                                <a href="#" data-page="order" class="btn btn-secondary btn-sm">Encomendar</a>
+                                <a href="javascript:void(0);" class="btn btn-whatsapp btn-sm whatsapp-order-btn">
+                                    <i class="fab fa-whatsapp"></i> Solicitar
+                                </a>
                             </div>
                         </div>
                         <div class="portfolio-item">
                             <div class="portfolio-img">
-                                <img src="IMG_20250913_114648.jpg" alt="Chaida">
+                                <img src="https://raw.githubusercontent.com/Diua-maker/image/main/IMG_20250913_114648.jpg" alt="Chaida">
                             </div>
                             <div class="portfolio-overlay">
                                 <h3>Chaida</h3>
                                 <p>Grafite sobre papel, 21x29,7cm</p>
-                                <a href="#" data-page="order" class="btn btn-secondary btn-sm">Encomendar</a>
+                                <a href="javascript:void(0);" class="btn btn-whatsapp btn-sm whatsapp-order-btn">
+                                    <i class="fab fa-whatsapp"></i> Solicitar
+                                </a>
                             </div>
                         </div>
                         <div class="portfolio-item">
                             <div class="portfolio-img">
-                                <img src="1756626021013.jpg" alt="Mother">
+                                <img src="https://raw.githubusercontent.com/Diua-maker/image/main/1756626021013.jpg" alt="Mother">
                             </div>
                             <div class="portfolio-overlay">
                                 <h3>Mother</h3>
                                 <p>Grafite sobre papel, 29,7x42cm</p>
-                                <a href="#" data-page="order" class="btn btn-secondary btn-sm">Encomendar</a>
+                                <a href="javascript:void(0);" class="btn btn-whatsapp btn-sm whatsapp-order-btn">
+                                    <i class="fab fa-whatsapp"></i> Solicitar
+                                </a>
                             </div>
                         </div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <a href="javascript:void(0);" class="btn btn-whatsapp btn-whatsapp-large" id="portfolioWhatsapp">
+                            <i class="fab fa-whatsapp"></i> Solicitar Desenho Personalizado
+                        </a>
                     </div>
                 </div>
             </section>
@@ -1256,21 +1405,27 @@
                             <h3>Retrato em papel tamanho A4</h3>
                             <div class="service-price">A partir de 250 MT</div>
                             <p>Retratos individuais realistas em grafite ou carvão, capturando toda a essência e personalidade.</p>
-                            <a href="#" data-page="order" class="btn">Encomendar</a>
+                            <a href="javascript:void(0);" class="btn btn-whatsapp whatsapp-service-btn" data-service="Retrato A4 - 250 MT">
+                                <i class="fab fa-whatsapp"></i> Solicitar via WhatsApp
+                            </a>
                         </div>
                         <div class="service-item">
                             <h3>Retrato em papel tamanho A3</h3>
                             <div class="service-price">A partir de 400 MT</div>
                             <p>Eternize momentos especiais com um retrato realista de casal ou individual, perfeito para presentes.</p>
-                            <a href="#" data-page="order" class="btn">Encomendar</a>
+                            <a href="javascript:void(0);" class="btn btn-whatsapp whatsapp-service-btn" data-service="Retrato A3 - 400 MT">
+                                <i class="fab fa-whatsapp"></i> Solicitar via WhatsApp
+                            </a>
                         </div>
                         <div class="service-item">
                             <h3>Retrato em tamanho A2</h3>
                             <div class="service-price">A partir de 750 MT</div>
                             <p>Perfeito para retratos de família inteira com atenção meticulosa a cada membro.</p>
-                            <a href="#" data-page="order" class="btn">Encomendar</a>
+                            <a href="javascript:void(0);" class="btn btn-whatsapp whatsapp-service-btn" data-service="Retrato A2 - 750 MT">
+                                <i class="fab fa-whatsapp"></i> Solicitar via WhatsApp
+                            </a>
                         </div>
-                        
+
                     </div>
                 </div>
             </section>
@@ -1327,6 +1482,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="text-center mt-5">
+                        <p class="mb-3">Ainda tem dúvidas?</p>
+                        <a href="javascript:void(0);" class="btn btn-whatsapp" id="faqWhatsapp">
+                            <i class="fab fa-whatsapp"></i> Pergunte no WhatsApp
+                        </a>
+                    </div>
                 </div>
             </section>
         </div>
@@ -1340,7 +1501,7 @@
                     </div>
                     <div class="about-grid">
                         <div class="about-img">
-                            <img src="InShot_20251027_195427413.jpg" alt="Coragem Diua">
+                            <img src="https://raw.githubusercontent.com/Diua-maker/image/main/InShot_20251027_195427413.jpg" alt="Coragem Diua">
                         </div>
                         <div class="about-content">
                             <h3>Artista de Milange</h3>
@@ -1348,84 +1509,25 @@
                             <p class="mb-4">Artista de desenhos realistas natural de Milange, na província da Zambézia, Moçambique.</p>
                             <p class="mb-4">A minha paixão pela arte começou desde o ensino secundario, e ao longo dos anos desenvolvi técnicas especializadas em retratos realistas a grafite e carvão.</p>
                             <p class="mb-5">Cada obra que crio é única, feita com dedicação e atenção aos mínimos detalhes, para que você receba não apenas um desenho, mas uma verdadeira obra de arte que preserva memórias e emoções.</p>
-                            <a href="https://wa.me/258872007783" class="btn btn-whatsapp">
+                            <a href="javascript:void(0);" class="btn btn-whatsapp btn-whatsapp-large" id="aboutWhatsapp">
                                 <i class="fab fa-whatsapp"></i> Falar no WhatsApp
                             </a>
                             <div class="about-stats">
                                 <div class="stat-item">
-                                    <div class="stat-number">1+</div>
+                                    <div class="stat-number" data-target="1">1+</div>
                                     <div class="stat-text">Anos de Experiência</div>
                                 </div>
                                 <div class="stat-item">
-                                    <div class="stat-number">10+</div>
+                                    <div class="stat-number" data-target="10">10+</div>
                                     <div class="stat-text">Desenhos Entregues</div>
                                 </div>
                                 <div class="stat-item">
-                                    <div class="stat-number">10+</div>
+                                    <div class="stat-number" data-target="10">10+</div>
                                     <div class="stat-text">Clientes Satisfeitos</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Order Page -->
-        <div id="order" class="page">
-            <section class="py-5">
-                <div class="container">
-                    <div class="section-title">
-                        <h2>Encomendar Desenho</h2>
-                    </div>
-                    <form id="orderForm" class="mb-5">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="name">Nome Completo*</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="whatsapp">Número de WhatsApp*</label>
-                                <input type="tel" id="whatsapp" name="whatsapp" required>
-                            </div>
-                        </div>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="drawingType">Tamanhos principais*</label>
-                                <select id="drawingType" name="drawingType" required>
-                                    <option value="">Seleccione uma opção</option>
-                                    <option value="individual">Papel A4 (250 MT)</option>
-                                    <option value="couple">Papel A3 (400 MT)</option>
-                                    <option value="family">Papel A2 (750 MT)</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="size">Outros Tamanhos*</label>
-                                <select id="size" name="size" required>
-                                    <option value="">Seleccione uma opção</option>
-                                    <option value="small">Pequeno (20x20cm)</option>
-                                    <option value="medium">Médio (30x30cm)</option>
-                                    <option value="large">Grande (40x40cm)</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Descrição do Desenho*</label>
-                            <textarea id="description" name="description" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="location">Localização para Entrega</label>
-                            <input type="text" id="location" name="location">
-                        </div>
-                        <div class="form-group">
-                            <label for="photoReference">Foto de Referência</label>
-                            <p class="mb-2" style="font-size: 0.875rem; color: var(--gray);">A foto será enviada via WhatsApp após o envio do pedido.</p>
-                        </div>
-                        <button type="submit" class="btn btn-whatsapp" style="width: 100%; max-width: 400px; margin: 0 auto; display: block;">
-                            <i class="fab fa-whatsapp"></i> Enviar Pedido via WhatsApp
-                        </button>
-                        <p class="text-center mt-3" style="font-size: 0.875rem; color: var(--gray);">Após enviar o pedido, será redireccionado para o WhatsApp para enviar a foto de referência.</p>
-                    </form>
                 </div>
             </section>
         </div>
@@ -1439,8 +1541,8 @@
                     </div>
                     <div class="contact-grid">
                         <div>
-                            <p class="mb-4">A forma mais rápida de me contactar é via WhatsApp:</p>
-                            <a href="https://wa.me/258872007783" class="btn btn-whatsapp mb-5">
+                            <p class="mb-4">A forma mais rápida de me contactar é via WhatsApp. Envie sua foto e receba um orçamento personalizado!</p>
+                            <a href="javascript:void(0);" class="btn btn-whatsapp btn-whatsapp-large mb-5" id="contactWhatsapp">
                                 <i class="fab fa-whatsapp"></i> Falar no WhatsApp
                             </a>
                             <div class="contact-info-item">
@@ -1471,22 +1573,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <form id="contactForm" class="mb-5">
-                                <div class="form-group">
-                                    <label for="contactName">Nome Completo*</label>
-                                    <input type="text" id="contactName" name="contactName" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="contactWhatsapp">Número de WhatsApp*</label>
-                                    <input type="tel" id="contactWhatsapp" name="contactWhatsapp" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="contactMessage">Mensagem*</label>
-                                    <textarea id="contactMessage" name="contactMessage" required></textarea>
-                                </div>
-                                <button type="submit" class="btn">Enviar Mensagem</button>
-                            </form>
+                        <div class="whatsapp-info-card" style="background: linear-gradient(135deg, var(--whatsapp), #128C7E); padding: 2rem; border-radius: 0.5rem; color: white;">
+                            <h3 style="color: white; margin-bottom: 1rem;"><i class="fab fa-whatsapp"></i> Como Encomendar</h3>
+                            <ol style="margin-left: 1.25rem; line-height: 2;">
+                                <li>Clique no botão do WhatsApp</li>
+                                <li>Envie sua foto de referência</li>
+                                <li>Informe o tamanho desejado (A4, A3 ou A2)</li>
+                                <li>Receba o orçamento personalizado</li>
+                                <li>Acompanhe o progresso do seu desenho</li>
+                            </ol>
+                            <p style="margin-top: 1.5rem; opacity: 0.9; font-size: 0.9375rem;">
+                                <i class="fas fa-camera"></i> Dica: Envie fotos nítidas e bem iluminadas para melhores resultados!
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1504,26 +1602,26 @@
                         <div class="footer-logo-subtitle">Artista de desenhos realistas</div>
                     </div>
                     <p>Artista de desenhos realistas de Milange, Zambézia, Moçambique. Transformando memórias em obras de arte duradouras.</p>
-                    <a href="https://wa.me/258872007783" class="btn btn-whatsapp">
+                    <a href="javascript:void(0);" class="btn btn-whatsapp" id="footerWhatsapp">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
                 </div>
                 <div>
                     <h3 class="footer-heading">Links Rápidos</h3>
                     <ul class="footer-links">
-                        <li><a href="#" data-page="home" class="footer-nav-link">Início</a></li>
-                        <li><a href="#" data-page="portfolio" class="footer-nav-link">Portfólio</a></li>
-                        <li><a href="#" data-page="services" class="footer-nav-link">Serviços</a></li>
-                        <li><a href="#" data-page="about" class="footer-nav-link">Sobre</a></li>
+                        <li><a href="javascript:void(0);" data-page="home" class="footer-nav-link">Início</a></li>
+                        <li><a href="javascript:void(0);" data-page="portfolio" class="footer-nav-link">Portfólio</a></li>
+                        <li><a href="javascript:void(0);" data-page="services" class="footer-nav-link">Serviços</a></li>
+                        <li><a href="javascript:void(0);" data-page="about" class="footer-nav-link">Sobre</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="footer-heading">Serviços</h3>
                     <ul class="footer-links">
-                        <li><a href="#" data-page="services" class="footer-nav-link">Retratos Individuais</a></li>
-                        <li><a href="#" data-page="services" class="footer-nav-link">Retratos de Família</a></li>
-                        <li><a href="#" data-page="services" class="footer-nav-link">Retratos Memoriais</a></li>
-                        <li><a href="#" data-page="services" class="footer-nav-link">Desenhos Coloridos</a></li>
+                        <li><a href="javascript:void(0);" data-page="services" class="footer-nav-link">Retratos Individuais</a></li>
+                        <li><a href="javascript:void(0);" data-page="services" class="footer-nav-link">Retratos de Família</a></li>
+                        <li><a href="javascript:void(0);" data-page="services" class="footer-nav-link">Retratos Memoriais</a></li>
+                        <li><a href="javascript:void(0);" data-page="services" class="footer-nav-link">Desenhos Coloridos</a></li>
                     </ul>
                 </div>
             </div>
@@ -1533,213 +1631,285 @@
         </div>
     </footer>
 
-    <!-- Success Modal -->
-    <div class="modal" id="successModal">
-        <div class="modal-content">
-            <div class="success-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <h3>Sucesso!</h3>
-            <p>Sua mensagem foi enviada com sucesso.</p>
-            <button class="btn" id="closeModal">OK</button>
-        </div>
-    </div>
-
     <script>
-        // Navigation
-        const navLinks = document.querySelectorAll('.nav-link');
-        const footerNavLinks = document.querySelectorAll('.footer-nav-link');
-        const pages = document.querySelectorAll('.page');
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
-        
-        // Show active page
-        function showPage(pageId) {
-            // Hide all pages
-            pages.forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-            
-            // Update active nav link
-            navLinks.forEach(link => {
-                if (link.getAttribute('data-page') === pageId) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-            
-            // Close mobile menu if open
-            if (nav.classList.contains('active')) {
-                nav.classList.remove('active');
-            }
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-        
-        // Event listener for nav links
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const pageId = this.getAttribute('data-page');
-                showPage(pageId);
-            });
-        });
-        
-        // Event listener for footer nav links
-        footerNavLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const pageId = this.getAttribute('data-page');
-                showPage(pageId);
-            });
-        });
-        
-        // Mobile menu toggle
-        menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
-        });
-        
-        // FAQ Accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', function() {
-                const answer = this.nextElementSibling;
-                const isActive = this.classList.contains('active');
-                
-                // Close all other FAQs
-                faqQuestions.forEach(q => {
-                    if (q !== this) {
-                        q.classList.remove('active');
-                        q.nextElementSibling.style.maxHeight = null;
-                    }
-                });
-                
-                // Toggle current FAQ
-                if (isActive) {
-                    this.classList.remove('active');
-                    answer.style.maxHeight = null;
-                } else {
-                    this.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                }
-            });
-        });
-        
-        // Contact Form Submission
-        const contactForm = document.getElementById('contactForm');
-        const successModal = document.getElementById('successModal');
-        const closeModal = document.getElementById('closeModal');
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('contactName').value;
-            const whatsapp = document.getElementById('contactWhatsapp').value;
-            const message = document.getElementById('contactMessage').value;
-            
-            // Simulate form submission
-            setTimeout(function() {
-                successModal.classList.add('active');
-                contactForm.reset();
-            }, 1000);
-        });
-        
-        closeModal.addEventListener('click', function() {
-            successModal.classList.remove('active');
-        });
-        
-        // Order Form Submission
-        const orderForm = document.getElementById('orderForm');
-        
-        orderForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const whatsapp = document.getElementById('whatsapp').value;
-            const drawingType = document.getElementById('drawingType').value;
-            const size = document.getElementById('size').value;
-            const description = document.getElementById('description').value;
-            const location = document.getElementById('location').value || 'Não especificado';
-            
-            // Create WhatsApp message
-            let whatsappMessage = 
-                `*Novo Pedido de Desenho*\n\n` +
-                `*Nome:* ${name}\n` +
-                `*WhatsApp:* ${whatsapp}\n` +
-                `*Tipo de Desenho:* ${document.getElementById('drawingType').options[document.getElementById('drawingType').selectedIndex].text}\n` +
-                `*Tamanho:* ${document.getElementById('size').options[document.getElementById('size').selectedIndex].text}\n` +
-                `*Descrição:* ${description}\n` +
-                `*Localização para Entrega:* ${location}`;
-            
-            // Encode message for WhatsApp URL
-            whatsappMessage = encodeURIComponent(whatsappMessage);
-            
-            // Redirect to WhatsApp
-            window.location.href = `https://wa.me/258872007783?text=${whatsappMessage}`;
-        });
-        
-        // Check for page links in URL
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const pageParam = urlParams.get('page');
-            
-            if (pageParam && document.getElementById(pageParam)) {
-                showPage(pageParam);
-            }
-            
-            // Initialize first FAQ as open
-            if (faqQuestions.length > 0) {
-                faqQuestions[0].click();
-            }
-        });
+        (function() {
+            'use strict';
 
-        // Counter animation for stats
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            
-            counters.forEach(counter => {
-                const target = parseInt(counter.innerText);
-                let count = 0;
-                const duration = 2000; // Animation duration in milliseconds
-                const increment = target / (duration / 16); // Update every 16ms (60fps)
-                
-                const updateCounter = () => {
-                    if (count < target) {
-                        count += increment;
-                        counter.innerText = Math.ceil(count) + (counter.innerText.includes('%') ? '%' : '+');
-                        requestAnimationFrame(updateCounter);
+            // ============================================
+            // CONFIGURAÇÃO
+            // ============================================
+            var WHATSAPP_NUMBER = '258872007783';
+            var DEFAULT_MESSAGE = 'Olá Coragem Diua! 👋\n\nGostaria de encomendar um desenho realista.\n\n📸 *Vou enviar minha foto de referência em seguida*\n\nPor favor, me informe:\n• Preços disponíveis\n• Prazo de entrega\n• Formas de pagamento\n\nAguardo retorno! 🎨';
+
+            // ============================================
+            // DARK MODE
+            // ============================================
+            function initDarkMode() {
+                try {
+                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        document.documentElement.classList.add('dark');
+                    }
+                    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(event) {
+                        if (event.matches) {
+                            document.documentElement.classList.add('dark');
+                        } else {
+                            document.documentElement.classList.remove('dark');
+                        }
+                    });
+                } catch (e) {
+                    // Fallback para navegadores antigos
+                }
+            }
+
+            // ============================================
+            // WHATSAPP
+            // ============================================
+            function openWhatsApp(customMessage) {
+                var message = customMessage || DEFAULT_MESSAGE;
+                var encodedMessage = encodeURIComponent(message);
+                var whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodedMessage;
+
+                // Método compatível com WebView Android
+                try {
+                    var link = document.createElement('a');
+                    link.href = whatsappUrl;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } catch (e) {
+                    // Fallback
+                    window.location.href = whatsappUrl;
+                }
+            }
+
+            // ============================================
+            // NAVEGAÇÃO
+            // ============================================
+            function showPage(pageId) {
+                var pages = document.querySelectorAll('.page');
+                var navLinks = document.querySelectorAll('.nav-link');
+                var mainNav = document.getElementById('mainNav');
+
+                // Esconder todas as páginas
+                for (var i = 0; i < pages.length; i++) {
+                    pages[i].classList.remove('active');
+                }
+
+                // Mostrar página selecionada
+                var targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                }
+
+                // Atualizar links de navegação
+                for (var j = 0; j < navLinks.length; j++) {
+                    if (navLinks[j].getAttribute('data-page') === pageId) {
+                        navLinks[j].classList.add('active');
                     } else {
-                        counter.innerText = target + (counter.innerText.includes('%') ? '%' : '+');
+                        navLinks[j].classList.remove('active');
                     }
-                };
-                
-                // Reset counter text for animation
-                counter.innerText = '0';
-                
-                // Observe when element comes into view
-                const observer = new IntersectionObserver((entries) => {
-                    if (entries[0].isIntersecting) {
-                        updateCounter();
-                        observer.disconnect();
+                }
+
+                // Fechar menu mobile
+                if (mainNav && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                }
+
+                // Scroll para o topo
+                window.scrollTo(0, 0);
+            }
+
+            function initNavigation() {
+                // Links de navegação principal
+                var navLinks = document.querySelectorAll('.nav-link');
+                for (var i = 0; i < navLinks.length; i++) {
+                    navLinks[i].addEventListener('click', function(e) {
+                        e.preventDefault();
+                        var pageId = this.getAttribute('data-page');
+                        if (pageId) {
+                            showPage(pageId);
+                        }
+                    });
+                }
+
+                // Links de navegação do footer
+                var footerNavLinks = document.querySelectorAll('.footer-nav-link');
+                for (var j = 0; j < footerNavLinks.length; j++) {
+                    footerNavLinks[j].addEventListener('click', function(e) {
+                        e.preventDefault();
+                        var pageId = this.getAttribute('data-page');
+                        if (pageId) {
+                            showPage(pageId);
+                        }
+                    });
+                }
+
+                // Menu toggle mobile
+                var menuToggle = document.getElementById('menuToggle');
+                var mainNav = document.getElementById('mainNav');
+                if (menuToggle && mainNav) {
+                    menuToggle.addEventListener('click', function() {
+                        mainNav.classList.toggle('active');
+                    });
+                }
+            }
+
+            // ============================================
+            // FAQ ACCORDION
+            // ============================================
+            function initFAQ() {
+                var faqQuestions = document.querySelectorAll('.faq-question');
+
+                for (var i = 0; i < faqQuestions.length; i++) {
+                    faqQuestions[i].addEventListener('click', function() {
+                        var answer = this.nextElementSibling;
+                        var isActive = this.classList.contains('active');
+
+                        // Fechar todas as outras
+                        for (var j = 0; j < faqQuestions.length; j++) {
+                            if (faqQuestions[j] !== this) {
+                                faqQuestions[j].classList.remove('active');
+                                faqQuestions[j].nextElementSibling.style.maxHeight = null;
+                            }
+                        }
+
+                        // Toggle atual
+                        if (isActive) {
+                            this.classList.remove('active');
+                            answer.style.maxHeight = null;
+                        } else {
+                            this.classList.add('active');
+                            answer.style.maxHeight = answer.scrollHeight + 'px';
+                        }
+                    });
+                }
+
+                // Abrir primeira FAQ automaticamente
+                if (faqQuestions.length > 0) {
+                    setTimeout(function() {
+                        faqQuestions[0].click();
+                    }, 100);
+                }
+            }
+
+            // ============================================
+            // BOTÕES WHATSAPP
+            // ============================================
+            function initWhatsAppButtons() {
+                var whatsappButtonIds = [
+                    'whatsappFloat',
+                    'heroWhatsapp',
+                    'ctaWhatsapp',
+                    'portfolioWhatsapp',
+                    'faqWhatsapp',
+                    'aboutWhatsapp',
+                    'contactWhatsapp',
+                    'footerWhatsapp'
+                ];
+
+                for (var i = 0; i < whatsappButtonIds.length; i++) {
+                    var btn = document.getElementById(whatsappButtonIds[i]);
+                    if (btn) {
+                        btn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            openWhatsApp();
+                        });
                     }
-                }, { threshold: 0.5 });
-                
-                observer.observe(counter);
-            });
-        }
-        
-        // Initialize animations
-        document.addEventListener('DOMContentLoaded', function() {
-            animateCounters();
-        });
+                }
+
+                // Botões de pedido do portfólio
+                var orderButtons = document.querySelectorAll('.whatsapp-order-btn');
+                for (var j = 0; j < orderButtons.length; j++) {
+                    orderButtons[j].addEventListener('click', function(e) {
+                        e.preventDefault();
+                        var message = 'Olá Coragem Diua! 👋\n\nVi seu trabalho no site e gostaria de encomendar um desenho similar.\n\n📸 *Vou enviar minha foto de referência em seguida*\n\nAguardo orçamento! 🎨';
+                        openWhatsApp(message);
+                    });
+                }
+
+                // Botões de serviço
+                var serviceButtons = document.querySelectorAll('.whatsapp-service-btn');
+                for (var k = 0; k < serviceButtons.length; k++) {
+                    serviceButtons[k].addEventListener('click', function(e) {
+                        e.preventDefault();
+                        var service = this.getAttribute('data-service');
+                        var message = 'Olá Coragem Diua! 👋\n\nTenho interesse no serviço: *' + service + '*\n\n📸 *Vou enviar minha foto de referência em seguida*\n\nPor favor, confirme disponibilidade e prazo de entrega.\n\nObrigado! 🎨';
+                        openWhatsApp(message);
+                    });
+                }
+            }
+
+            // ============================================
+            // CONTADOR ANIMADO
+            // ============================================
+            function animateCounters() {
+                var counters = document.querySelectorAll('.stat-number');
+
+                for (var i = 0; i < counters.length; i++) {
+                    (function(counter) {
+                        var targetText = counter.innerText;
+                        var target = parseInt(targetText);
+
+                        if (isNaN(target)) return;
+
+                        var hasPlus = targetText.indexOf('+') !== -1;
+                        var hasPercent = targetText.indexOf('%') !== -1;
+                        var suffix = hasPercent ? '%' : (hasPlus ? '+' : '');
+
+                        var count = 0;
+                        var duration = 2000;
+                        var increment = target / (duration / 16);
+
+                        function updateCounter() {
+                            if (count < target) {
+                                count += increment;
+                                counter.innerText = Math.ceil(count) + suffix;
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.innerText = target + suffix;
+                            }
+                        }
+
+                        // Usar IntersectionObserver se disponível
+                        if ('IntersectionObserver' in window) {
+                            var observer = new IntersectionObserver(function(entries) {
+                                if (entries[0].isIntersecting) {
+                                    counter.innerText = '0' + suffix;
+                                    updateCounter();
+                                    observer.disconnect();
+                                }
+                            }, { threshold: 0.5 });
+
+                            observer.observe(counter);
+                        } else {
+                            // Fallback para navegadores antigos
+                            counter.innerText = '0' + suffix;
+                            updateCounter();
+                        }
+                    })(counters[i]);
+                }
+            }
+
+            // ============================================
+            // INICIALIZAÇÃO
+            // ============================================
+            function init() {
+                initDarkMode();
+                initNavigation();
+                initFAQ();
+                initWhatsAppButtons();
+                animateCounters();
+            }
+
+            // Executar quando DOM estiver pronto
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
     </script>
 </body>
 </html>
